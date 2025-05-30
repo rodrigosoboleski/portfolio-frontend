@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* Inter */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+/* Archivo */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+/* Josefin Sans */
+:root {
+    --font1: 'Inter', sans-serif;
+    --font2: 'Archivo', sans-serif;
+    --font3: 'Josefin Sans', sans-serif;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 10px 0px 140px 0px;
+    font-family: var(--font1);
+    color: #fff;
+    background-image: url(imagens/bg1.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    backdrop-filter: url(filters.svg#filter) blur(25px) brightness(30%);
+}
+#container {
+    margin: auto;
+    max-width: 1000px;
+}
+/*APRESENTAÇÃO COM EMOJI =================================*/
+section.apresentacao {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+div.imagem-perfil {
+    border-radius: 50%;
+    margin-bottom: 50px;
+    width: 200px;
+    height: 200px;
+    background: url(imagens/emoji/2.sorridente.png) center no-repeat white;
+    background-size: 260px;
+    box-shadow: 0px 0px 13px white;
+}
+.apresentacao {
+    align-items: center;
+    text-align: center;
+
+}
+.saudaçao h1 {
+    font-size: 50px;
+    font-family: var(--font1);
+    font-weight: 500;
+    margin: 0px;
+    padding: 0px;
+}
+.saudaçao h2 {
+    color: #fff;
+    font-family: var(--font1);
+    font-weight: 200;
+    padding-top: 0;
+    margin: 5px 0px 145px;
+}
+/*SOBRE==================================================*/
+section#sobre {
+    display: grid;
+    grid-template-columns: 2.2fr 0.8fr;
+    grid-column-gap: 20px;
+}
+section#sobre div {
+    min-height: 300px;
+    border-radius: 50px;
+}
+div.emoji-bg {
+    background: linear-gradient(0deg, rgb(34, 117, 195, 0.575) 0%, rgba(59, 45, 253, 0.575) 90%);
+    border-radius: 50px;
+    box-shadow: 0px 0px 15px rgba(34, 117, 195, 0.5);
+    padding: 0px;
+    overflow: hidden;
+}
+div.emoji-oi {
+    background: url(imagens/emoji/4.ola-frontal.png) center no-repeat;
+    background-position-y: -10px;
+    background-size: 250px;
+}
+div.texto-sobre {
+    background: linear-gradient(90deg, rgba(53, 53, 53, 0.30) 0%, rgba(78, 78, 78, 0.30) 90%);
+    color: white;
+    font-family: var(--font1);
+}
+div.texto-sobre h2 {
+    margin: 60px 40px 20px;
+    font-size: 40px;
+    font-weight: 500;
+    font-family: var(--font3);
+}
+div.texto-sobre p {
+    font-family: var(--font2);
+    margin: 20px 40px;
+    font-size: 20px;
+    font-weight: 100;
+}
+/*PROJETOS===============================================*/
+#projetos {
+    text-align: center;
+    background: linear-gradient(90deg, rgba(53, 53, 53, 0.30) 0%, rgba(78, 78, 78, 0.30) 90%);
+    border-radius: 50px;
+    padding: 20px 0;
+    margin: 40px 0;
+}
+#projetos h2 {
+    font-size: 40px;
+    font-family: var(--font3);
+    padding-top: 20px;
+    margin: 0;
+}
+#projetos p {
+    font-size: 20px;
+}
+.area-projetos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 50px;
+    padding: 20px 10%;
+    margin-bottom: 30px;
+}
+.area-projetos a {
+    flex: 0 1 calc(50% - 25px);
+    /* Define a largura de cada item para ser 50% menos a metade do gap */
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 50px;
+}
+.area-projetos a:hover {
+    text-decoration: underline;
+}
+.area-projetos img {
+    border-radius: 20px;
+    box-shadow: 0px 0px 9px rgb(48, 48, 48);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease, box-shadow 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.area-projetos a:hover img {
+    filter: blur(4px);
+    box-shadow: 0px 0px 15px rgb(255, 255, 255);
+}
+.area-projetos p {
+    font-family: var(--font3);
+    text-shadow: 0px 0px 2px white;
+    margin: 10px;
+    color: white;
+    font-size: 1rem;
+    position: relative;
+    top: 190px;
+    z-index: 2;
+}
+.area-projetos .ver-mais {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: black;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    z-index: 3;
+    background-color: transparent;
+    padding: 10px 20px 7px;
+    border-radius: 20px;
+    box-shadow: none;
+    pointer-events: none;
+}
+.area-projetos a:hover .ver-mais {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, .918);
+    color: black;
+    box-shadow: 0px 0px 15px black;
+}
+/*CONTATO======================================================*/footer {
+    display: grid;
+    grid-template-columns: 2.1fr 0.9fr;
+    grid-column-gap: 20px;
+}
+div.card-skills {
+    background: linear-gradient(90deg, rgba(53, 53, 53, 0.30) 0%, rgba(78, 78, 78, 0.30) 90%);
+    color: white;
+    font-family: var(--font1);
+    height: 380px;
+    border-radius: 50px;
+}
+div.card-skills h2 {
+    margin: 30px 30px 10px;
+    font-size: 40px;
+    font-weight: 500;
+    font-family: var(--font3);
+}
+div.card-skills p {
+    font-family: var(--font2);
+    font-size: 1.5rem;
+    font-weight: 100;
+    text-align: justify;
+    line-height: 1.2;
+    margin: 0 30px;
+}
+div.skills {
+    height: 160px;
+    display: flex;
+    padding-left: 50px;
+    align-items: center;
+    gap: 5px;
+}
+div.skill-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 4px white;
+    border-radius: 20px;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    padding: 2px;
+}
+.skill-icon img {
+    width: 70%;
+}
+.card-contato {
+    background: url(imagens/emoji/3.mac-book.png) center no-repeat;
+    height: 100%;
+    background-position-y: 45px;
+    background-position-x: 70px;
+    background-size: 350px;
+}
+.card-contato h3 {
+    padding: 0;
+    font-size: 2rem;
+    margin: 30px 30px 0px;
+}
+.card-contato p {
+    padding: 0;
+    font-size: 1rem;
+    margin: 0 30px;
+    line-height: 1;
+}
+.botao-contato {
+    margin: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.botao-contato img {
+    width: 60%;
+}
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(190, 190, 190, 0.233);
+    color: #121212;
+    border-radius: 10px;
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+    padding: 2px;
+}
+.social img {
+    width: 60%;
+}
+.social:hover {
+    background-color: #000000;
+    box-shadow: 0px 0px 10px #646464;
+    transition: 0.3s ease-in-out;
+
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 840px) {
+    body{
+        background-color: #121212;
+        background-image: none; 
+        backdrop-filter: none; 
+    }
+    #container {
+        padding: 0 20px;
+    }
+    section#sobre {
+        grid-template-columns: 1fr;
+        grid-row-gap: 30px;
+    }
+    #sobre .texto-sobre{
+        padding-bottom: 20px;
+    }
+    footer {
+        grid-template-columns: 1fr;
+    }
+    div.card-skills {
+        height: auto; 
+        padding: 20px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+    }
+    div.card-skills h2 {
+        font-size: 30px; 
+        margin: 20px 20px 10px;
+    }
+    div.card-skills p {
+        font-size: 1.2rem; 
+        margin: 0 20px;
+    }
+    div.skills {
+        flex-wrap: wrap;
+        flex-direction: column; 
+        padding: 20px;
+    }
+    div.skill-icon {  
+        width: 80px; 
+        height: 80px;
+        margin-right: 0;
+        margin-bottom: 10px; 
+    }
+    .card-contato {
+        background-size: 250px; 
+        background-position-y: -25px;
+        background-position-x: 100%;
+    }
+    .card-contato h3 {
+        font-size: 1.5rem; 
+    }
+    .card-contato p {
+        font-size: 0.9rem; 
+    }
+    .botao-contato {
+        flex-direction: row;
+        width: 80px; 
+        margin: 20px 5%;
+    }
+    .botao-contato img {
+        width: 50%;
+    }
+}
+@media (max-width: 768px) {
+    #projetos h2 {
+        font-size: 35px;
+        margin: 10px;
+    }
+    #projetos p {
+        font-size: 15px;
+        margin: 0 20px;
+    }
+    .area-projetos a {
+        flex: 0 1 100%;
+        margin-bottom: 30px;
+    }
+    .area-projetos .ver-mais {
+        position: absolute;
+        top: 50%;
+        left: 48%;
+        transform: translate(-50%, -50%);
+    }
+}
+@media (max-width: 550px) {
+    body {
+        background-color: #121212;
+        background-image: none; 
+        backdrop-filter: none; 
+    }
+    #container {
+        padding: 0 20px;
+    }
+    header {
+        display: none;
+    }
+    .apresentacao {
+        margin-top: 150px;
+    }
+    .imagem-perfil {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 30px;
+    }
+    .saudaçao h1 {
+        font-size: 2rem;
+    }
+    .saudaçao h2 {
+        font-size: 1.2rem;
+        margin-bottom: 100px;
+    }
+    section#sobre {
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+    }
+
+    div.texto-sobre h2 {
+        font-size: 1.8rem;
+        text-align: center;
+        margin: 30px;
+    }
+
+    div.texto-sobre p {
+        font-size: 1.2rem;
+        justify-content: center;
+        text-align: center;
+        margin: 20px;
+    }
+    #projetos h2 {
+        font-size: 2rem;
+    }
+    #projetos p {
+        font-size: 1rem;
+        top: 160px;
+    }
+    .area-projetos a {
+        height: 250px;
+        flex: 0 1 100%;
+        margin-bottom: 30px;
+    }
+    .area-projetos p {
+        font-size: 0.9rem;
+    }
+    .area-projetos .ver-mais {
+        display: none;
+    }
+    footer {
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+    }
+    .card-skills {
+        padding: 10px;
+        text-align: center;
+        height: auto;
+    }
+    .card-skills h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    .card-skills p {
+        font-size: 0.9rem;
+    }
+    .skills{
+        border-radius: 0px;
+    }
+    .skill-icon{
+        border-radius: 0px;
+    }
+    .card-contato {
+        background-size: 80%;
+        text-align: center;
+        background-position-y: 70px;
+        background-position-x: center;
+        height: 300px;
+    }
+    .card-contato h3 {
+        font-size: 1.5rem;
+        margin-top: 20px;
+        text-align: center;
+    }
+    .card-contato p {
+        font-size: 0.9rem;
+        text-align: center;
+        margin-left: 10px;
+    }
+    .botao-contato {
+        width: 100%;
+        justify-content: center;
+        margin: 10px auto;
+        display: flex;
+    }
+    .social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(190, 190, 190, 0.233);
+        color: #121212;
+        border-radius: 10px;
+        width: 60px;
+        height: 60px;
+    }
+    .social img {
+        width: 60%;
+    }
+}
